@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Tourism Guard - Góp Xanh Thêm Xinh</title>
+    <title>Eco-Tourism Guard</title>
     <style>
         :root {
-            --primary-green: #2e7d32;
-            --light-green: #c8e6c9;
-            --bg-soft: #f1f8e9;
-            --dark-green: #1b5e20;
+            /* --- TONE MÀU ĐẠI DƯƠNG ĐƯƠNG ĐẠI --- */
+            --ocean-primary: #0066cc;
+            --ocean-light: #e6f2ff;
+            --bg-soft: #f0f7ff;
+            --ocean-dark: #003366;
             --accent-orange: #ff9100;
             --white: #ffffff;
+            --coral-pink: #ff6b6b;
         }
 
         * {
@@ -23,7 +25,7 @@
 
         body {
             background-color: var(--bg-soft);
-            color: var(--dark-green);
+            color: var(--ocean-dark);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -34,7 +36,7 @@
         /* --- NAVIGATION BAR --- */
         header {
             width: 100%;
-            background-color: var(--dark-green);
+            background-color: var(--ocean-dark);
             color: var(--white);
             padding: 15px 30px;
             display: flex;
@@ -70,7 +72,7 @@
 
         nav button:hover {
             background-color: var(--white);
-            color: var(--dark-green);
+            color: var(--ocean-dark);
         }
 
         /* --- CONTAINER PAGES --- */
@@ -98,6 +100,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* --- STICKERS ĐẠI DƯƠNG TRANG TRÍ --- */
+        .ocean-sticker {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.2;
+            pointer-events: none;
+            user-select: none;
+            animation: float 4s ease-in-out infinite;
+        }
+        .st-1 { top: 15px; right: 20px; font-size: 40px; }
+        .st-2 { bottom: 20px; left: 15px; font-size: 45px; }
+        .st-3 { bottom: 80px; right: 25px; font-size: 35px; }
+        .st-4 { top: 40px; left: 30px; font-size: 32px; }
+
         /* --- TRANG CHỦ --- */
         .hero-banner {
             text-align: left;
@@ -109,7 +125,7 @@
 
         .hero-text h2 {
             font-size: 48px;
-            color: var(--primary-green);
+            color: var(--ocean-primary);
             line-height: 1.1;
             margin-bottom: 5px;
         }
@@ -132,12 +148,12 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
         }
 
         .bottom-bar-play {
-            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            background: linear-gradient(135deg, var(--ocean-dark), var(--ocean-primary));
             color: white;
             padding: 20px;
             border-radius: 15px;
@@ -154,7 +170,7 @@
         }
 
         .btn-play-game {
-            background-color: #4caf50;
+            background-color: #0088ff;
             color: white;
             border: none;
             padding: 12px 25px;
@@ -167,7 +183,7 @@
         }
 
         .btn-play-game:hover {
-            background-color: #81c784;
+            background-color: #4da6ff;
             transform: scale(1.05);
         }
 
@@ -191,17 +207,17 @@
 
         /* --- TRANG GIỚI THIỆU --- */
         .intro-card {
-            border: 2px solid var(--primary-green);
+            border: 2px solid var(--ocean-primary);
             border-radius: 15px;
             padding: 25px;
-            background-color: var(--bg-soft);
+            background-color: var(--ocean-light);
             line-height: 1.8;
             font-size: 16px;
         }
 
         .btn-skip {
             float: right;
-            background-color: var(--dark-green);
+            background-color: var(--ocean-dark);
             color: white;
             border: none;
             padding: 10px 25px;
@@ -209,6 +225,8 @@
             cursor: pointer;
             font-weight: bold;
             margin-top: 20px;
+            z-index: 10;
+            position: relative;
         }
 
         /* --- TRANG HƯỚNG DẪN --- */
@@ -237,7 +255,7 @@
         }
 
         .tab-btn.active-tab {
-            background-color: var(--primary-green);
+            background-color: var(--ocean-primary);
             color: white;
         }
 
@@ -260,7 +278,7 @@
             width: 100px;
             height: 100px;
             margin: 35px auto;
-            border: 6px dashed var(--primary-green);
+            border: 6px dashed var(--ocean-primary);
             border-radius: 50%;
             animation: spin 3s linear infinite;
             display: flex;
@@ -277,6 +295,13 @@
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
         .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
+        .form-title-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--ocean-dark);
+        }
 
         /* --- GAME LAYERS --- */
         .game-container {
@@ -290,7 +315,7 @@
             margin-bottom: 12px;
             font-weight: bold;
             font-size: 18px;
-            background: var(--bg-soft);
+            background: var(--ocean-light);
             padding: 12px;
             border-radius: 10px;
         }
@@ -351,7 +376,7 @@
         }
 
         .quiz-opt-btn:hover {
-            background: var(--primary-green);
+            background: var(--ocean-primary);
         }
 
         #game-over-screen {
@@ -370,29 +395,80 @@
             border-radius: 10px;
         }
 
-        /* --- CHỨNG NHẬN --- */
+        /* --- THIẾT KẾ GIẤY CHỨNG NHẬN LỘNG LẪY & HIỆU ỨNG SINH ĐỘNG --- */
         .cert-border {
-            border: 10px double var(--dark-green);
-            padding: 35px;
-            background: #fafafa;
+            border: 6px double #e0b034;
+            background: radial-gradient(circle, #ffffff 60%, #f7faff 100%);
+            padding: 45px;
             text-align: center;
-            color: #263238;
+            color: #1e293b;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), inset 0 0 40px rgba(224, 176, 52, 0.1);
         }
+        
+        .cert-border::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,215,0,0.04) 0%, rgba(255,255,255,0) 50%, rgba(0,229,255,0.04) 100%);
+            pointer-events: none;
+            border-radius: 10px;
+        }
+
+        .cert-header-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            animation: certFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes certFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cert-border h2 {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #b27b00, #f9d976, #b27b00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
         .cert-name {
-            font-size: 26px;
-            font-weight: bold;
-            color: #c62828;
+            font-size: 30px;
+            font-weight: 800;
+            color: #0284c7;
             margin: 15px 0;
             display: inline-block;
-            border-bottom: 2px dashed #ccc;
-            padding: 0 20px;
+            border-bottom: 3px double #0284c7;
+            padding: 5px 30px;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .cert-badge-gold {
+            position: absolute;
+            bottom: 25px;
+            right: 35px;
+            font-size: 65px;
+            opacity: 0.85;
+            animation: pulseBadge 2s infinite alternate;
+        }
+
+        @keyframes pulseBadge {
+            0% { transform: scale(1) rotate(-10deg); }
+            100% { transform: scale(1.08) rotate(-5deg); }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">ECO-TOURISM GUARD</div>
+        <div class="logo-area">🌊 ECO-TOURISM GUARD</div>
         <nav id="nav-links">
             <button onclick="switchPage('page-main-home')">TRANG CHỦ</button>
             <button onclick="switchPage('page-intro')">GIỚI THIỆU</button>
@@ -403,17 +479,15 @@
     <div id="page-main-home" class="page active">
         <div class="hero-banner">
             <div class="hero-text">
-                <h2>ECO-TOURISM<br>GUARD</h2>
-                <h3>"GÓP XANH THÊM XINH"</h3>
-                <p>Hành trình du lịch xanh - Thu gom rác thải - Bảo vệ môi trường đại dương</p>
-                <p id="welcome-user-text" style="font-weight: bold; color: var(--primary-green); margin-top:-15px;"></p>
+                <h3>Minigame Gây quỹ Online</h3>
+                <p id="welcome-user-text" style="font-weight: bold; color: var(--ocean-primary); margin-top:-15px;"></p>
+                <h2>ECO-TOURISM GUARD</h2>
             </div>
-            <div class="character-pineapple">⛵️</div>
+            <div class="character-pineapple">🪸</div>
         </div>
         <div class="bottom-bar-play">
             <div>
-                <strong style="font-size: 18px;">HOÀN THÀNH CHẶNG - NHẬN CHỨNG NHẬN XANH</strong>
-                <p style="font-size: 13px; opacity: 0.9;">Đạt từ 400 điểm trở lên để nhận Giấy chứng nhận XANH!</p>
+                <strong style="font-size: 18px;">Đạt từ 400 điểm trở lên để nhận Huy hiệu Chiến Binh Đại Dương</strong>
             </div>
             <div class="action-buttons">
                 <button class="btn-play-game" onclick="checkAuthAndPlay()">Bắt đầu chơi</button>
@@ -423,17 +497,23 @@
     </div>
 
     <div id="page-intro" class="page">
-        <h2 style="margin-bottom: 15px;">Đôi điều về ECO-TOURISM GUARD</h2>
+        <div class="ocean-sticker st-1">🪸</div>
+        <div class="ocean-sticker st-2">🐡</div>
+        <div class="ocean-sticker st-3">🪼</div>
+        <div class="ocean-sticker st-4">🐟</div>
+        <h2 style="margin-bottom: 15px; color: var(--ocean-dark);">🌊ECO-TOURISM GUARD</h2>
         <div class="intro-card">
-            <p><strong>"Trong kỷ nguyên số, du lịch không chỉ là khám phá, mà còn là trách nhiệm."</strong></p><br>
-            <p>Bước vào thế giới của trò chơi, bạn sẽ thực hiện kéo thả móc neo của chiếc tàu gom các loại rác thải và thực hiện chuyến hải trình khám phá, giải cứu hệ sinh thái đại dương đang bị đe dọa. </p><br>
-            <p>💚 <em>"Từ những thao tác nhỏ, chúng ta gieo nên một hành trình xanh."</em></p>
+            <p><strong>"Giữa lòng đại dương, mỗi tọa độ thuyền nhỏ đi qua không chỉ để khám phá, mà là để chở che và bảo vệ môi trường."</strong></p><br>
+            <p>Bước vào thế giới của trò chơi, bạn sẽ thực hiện kéo thả móc neo của chiếc tàu gom các loại rác thải và thực hiện chuyến hải trình khám phá, giải cứu các rạn san hô và sinh vật biển đang bị đe dọa trước làn sóng rác thải nhựa. </p><br>
         </div>
         <button class="btn-skip" onclick="switchPage('page-main-home')">SKIP</button>
     </div>
 
     <div id="page-guide" class="page">
-        <h2 style="text-align: center; margin-bottom: 20px;">HƯỚNG DẪN CHƠI</h2>
+        <div class="ocean-sticker st-1">🪸</div>
+        <div class="ocean-sticker st-2">🐠</div>
+        <div class="ocean-sticker st-3">🦑</div>
+        <h2 style="text-align: center; margin-bottom: 20px; color: var(--ocean-dark);">CẨM NANG ĐIỀU KHIỂN TÀU NGẦM</h2>
         <div class="guide-container">
             <div class="tabs-menu">
                 <button class="tab-btn active-tab" onclick="changeTab(1, this)">BƯỚC 1</button>
@@ -441,7 +521,7 @@
                 <button class="tab-btn" onclick="changeTab(3, this)">BƯỚC 3</button>
             </div>
             <div class="tab-content" id="tab-text-content">
-                <h3 style="color: var(--primary-green); margin-bottom: 10px;">BƯỚC 1:</h3>
+                <h3 style="color: var(--ocean-primary); margin-bottom: 10px;">BƯỚC 1:</h3>
                 <p style="margin-bottom: 8px;">Điều khiển móc ngầm của chiếc tàu kéo chính xác các mục tiêu rác thải dưới đáy biển.</p>
                 <p>Tránh gắp nhầm rùa biển hay các đàn cá đang bơi tự do sẽ bị trừ 50 điểm.</p>
             </div>
@@ -450,41 +530,51 @@
     </div>
 
     <div id="page-register" class="page">
-        <h2>Đăng Ký Thành Viên</h2>
+        <div class="ocean-sticker st-1">🪸</div>
+        <div class="ocean-sticker st-2">🐠</div>
+        <div class="ocean-sticker st-3">🪼</div>
+        <div class="form-title-area">
+            <h2>📝 Đăng ký chiến binh đại dương</h2>
+        </div>
         <form id="register-form">
             <div class="form-group">
-                <label>Họ và Tên Sinh Viên:</label>
+                <label>Họ và tên sinh viên:</label>
                 <input type="text" id="reg-name" required placeholder="Nhập họ và tên đầy đủ">
             </div>
             <div class="form-group">
                 <label>Mã số sinh viên (MSSV):</label>
                 <input type="text" id="reg-mssv" required placeholder="Nhập MSSV">
             </div>
-            <button type="submit" class="btn-play-game" style="width:100%; border-radius: 8px;">ĐĂNG KÝ TÀI KHOẢN</button>
+            <button type="submit" class="btn-play-game" style="width:100%; border-radius: 8px; background-color: var(--ocean-primary);">ĐĂNG KÝ TÀI KHOẢN</button>
         </form>
-        <p style="text-align: center; margin-top: 15px; font-size: 14px;">Đã có tài khoản? <a href="#" onclick="switchPage('page-login')">Đăng nhập tại đây</a></p>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">Đã có tài khoản? <a href="#" style="color: var(--ocean-primary); font-weight: bold;" onclick="switchPage('page-login')">Đăng nhập tại đây</a></p>
     </div>
 
     <div id="page-login" class="page">
-        <h2>Đăng Nhập Thành Viên</h2>
+        <div class="ocean-sticker st-1">🪸</div>
+        <div class="ocean-sticker st-2">🐬</div>
+        <div class="ocean-sticker st-3">🦈</div>
+        <div class="form-title-area">
+            <h2>🔑 Đăng nhập vào hệ hải trình</h2>
+        </div>
         <form id="login-form">
             <div class="form-group">
-                <label>Họ và Tên Sinh Viên:</label>
+                <label>Họ và tên sinh viên:</label>
                 <input type="text" id="login-name" required placeholder="Nhập họ tên chính xác">
             </div>
             <div class="form-group">
                 <label>Mã số sinh viên (MSSV):</label>
                 <input type="password" id="login-mssv" required placeholder="Nhập MSSV làm mật khẩu">
             </div>
-            <button type="submit" class="btn-play-game" style="width:100%; border-radius: 8px; background-color: var(--primary-green);">ĐĂNG NHẬP</button>
+            <button type="submit" class="btn-play-game" style="width:100%; border-radius: 8px; background-color: var(--ocean-dark);">ĐĂNG NHẬP</button>
         </form>
-        <p style="text-align: center; margin-top: 15px; font-size: 14px;">Chưa có tài khoản? <a href="#" onclick="switchPage('page-register')">Đăng ký mới</a></p>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">Chưa có tài khoản? <a href="#" style="color: var(--ocean-primary); font-weight: bold;" onclick="switchPage('page-register')">Đăng ký mới</a></p>
     </div>
 
     <div id="page-loading" class="page">
-        <h2 style="text-align: center; color: var(--primary-green);">ĐANG TẢI DỮ LIỆU ĐẠI DƯƠNG...</h2>
-        <div class="spinner-circle">♻️</div>
-        <p style="text-align: center; font-size: 14px; color: #666; font-style: italic;">TRAVEL • GREEN • PROTECT</p>
+        <h2 style="text-align: center; color: var(--ocean-primary);">ĐANG KHỞI ĐỘNG HỆ THỐNG ĐỊNH VỊ TÀU NGẦM...</h2>
+        <div class="spinner-circle">🐋</div>
+        <p style="text-align: center; font-size: 14px; color: #666; font-style: italic;">TRAVEL • BLUE OCEAN • PROTECT</p>
     </div>
 
     <div id="page-game" class="page">
@@ -499,7 +589,7 @@
 
             <div id="quiz-overlay" class="quiz-overlay">
                 <div class="quiz-box">
-                    <h3 style="color: #4caf50; margin-bottom: 10px;">VỚT ĐƯỢC RÁC THẢI!</h3>
+                    <h3 style="color: #4caf50; margin-bottom: 10px;"> PHÁT HIỆN DỊ VẬT! Giải mã lõi công nghệ để thu hồi: </h3>
                     <div id="quiz-question" class="quiz-question">Câu hỏi trắc nghiệm?</div>
                     <div id="quiz-options" class="quiz-options"></div>
                 </div>
@@ -515,13 +605,17 @@
 
     <div id="page-certificate" class="page">
         <div class="cert-border">
-            <h2>CHỨNG NHẬN CHIẾN BINH XANH</h2>
-            <p style="margin: 15px 0;">Chứng nhận cấp cho sinh viên:</p>
+            <div class="cert-header-icon">🏆</div>
+            <h2>CHỨNG NHẬN CHIẾN BINH ĐẠI DƯƠNG</h2>
+            <p style="margin: 15px 0; font-style: italic; color: #475569;">Chứng nhận này được cấp cho Thuyền trưởng:</p>
             <div class="cert-name" id="cert-user-name">NGUYỄN VĂN A</div>
-            <p>MSSV: <strong id="cert-user-mssv">123456</strong></p>
-            <p style="margin-top: 20px; font-size: 18px;">Đã hoàn thành xuất sắc chặng thu gom rác đại dương với số điểm: <strong id="cert-score" style="color: var(--primary-green);">0</strong> điểm!</p>
+            <p style="font-size: 16px; margin-top: 5px;">Mã số sinh viên: <strong id="cert-user-mssv" style="color: #0f172a;">123456</strong></p>
+            <p style="margin-top: 25px; font-size: 18px; font-weight: 600; line-height: 1.6;">
+                Đã hoàn thành xuất sắc chặng hải trình thu gom rác thải đáy biển,<br>
+                bảo vệ thành công hệ sinh thái đại dương với số điểm tích lũy: <strong id="cert-score" style="color: #ea580c; font-size: 24px;">0</strong> điểm!
+            </p>
         </div>
-        <button class="btn-play-game" style="margin-top:20px; background-color:#555;" onclick="switchPage('page-main-home')">Quay về Trang Chủ</button>
+        <button class="btn-play-game" style="margin-top:20px; background-color:#555; box-shadow: none;" onclick="switchPage('page-main-home')">Quay về Trang Chủ</button>
     </div>
 
     <script>
@@ -541,7 +635,6 @@
             }
         }
 
-        // Đăng ký xong -> Nhảy qua đăng nhập như yêu cầu
         document.getElementById('register-form').addEventListener('submit', function(e) {
             e.preventDefault();
             let name = document.getElementById('reg-name').value.trim();
@@ -560,7 +653,6 @@
             switchPage('page-login');
         });
 
-        // Đăng nhập tài khoản
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             let name = document.getElementById('login-name').value.trim();
@@ -588,13 +680,11 @@
             }
         }
 
-        // Xem giấy chứng nhận trực tiếp từ trang chủ nếu đã thắng
         function viewMyCertificate() {
             if(!currentUser) {
                 alert("Bạn chưa đăng nhập!");
                 return;
             }
-            // Đọc lại DB mới nhất để kiểm tra trạng thái win
             let db = JSON.parse(localStorage.getItem('green_users')) || [];
             let myAcc = db.find(u => u.mssv === currentUser.mssv);
             
@@ -617,7 +707,7 @@
             } else if(changNum === 2) {
                 contentBox.innerHTML = `<h3>BƯỚC 2:</h3><br><p>Nếu gắp trúng rác thải thì tiếp tục trả lời câu hỏi để nghiền nén rác thải thành công và được cộng 100 điểm.</p><br><p>Nếu trả lời sai, hóa chất rò rỉ sẽ làm nước biển đục bẩn nặng nề.</p>`;
             } else {
-                contentBox.innerHTML = `<h3>BƯỚC 3:</h3><br><p>Đạt 400 điểm sẽ nhận được Giấy chứng nhận Xanh.</p>`;
+                contentBox.innerHTML = `<h3>BƯỚC 3:</h3><br><p>Đạt 400 Hải lý (Điểm) để mở khóa Huy hiệu Chiến Binh Đại Dương..</p>`;
             }
         }
 
@@ -666,13 +756,11 @@
         let hookState = "SWING"; 
         let targetItem = null;
         let items = [];
-        let particles = []; // Mảng chứa hiệu ứng hạt vụn rác lấp lánh khi va chạm
+        let particles = [];
 
-        // Khởi tạo hạt bụi rác hiệu ứng
         class Particle {
             constructor(x, y) {
-                this.x = x;
-                this.y = y;
+                this.x = x; this.y = y;
                 this.vx = (Math.random() - 0.5) * 4;
                 this.vy = (Math.random() - 0.5) * 4;
                 this.radius = Math.random() * 3 + 2;
@@ -680,17 +768,12 @@
                 this.color = ["#a3e635", "#60a5fa", "#facc15", "#ffffff"][Math.floor(Math.random() * 4)];
             }
             update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.alpha -= 0.02;
+                this.x += this.vx; this.y += this.vy; this.alpha -= 0.02;
             }
             draw() {
                 ctx.save();
-                ctx.globalAlpha = this.alpha;
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.globalAlpha = this.alpha; ctx.fillStyle = this.color;
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill();
                 ctx.restore();
             }
         }
@@ -777,7 +860,6 @@
         function gameLoop() {
             if (!gameActive) return;
 
-            // Đổi màu nước đục bẩn đặc trưng khi trả lời sai đồ nè
             let gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
             if (pollutionLevel === 0) {
                 gradient.addColorStop(0, '#4fc3f7'); gradient.addColorStop(1, '#01579b');
@@ -791,123 +873,93 @@
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Bầu trời
             ctx.fillStyle = "#b3e5fc";
             ctx.fillRect(0, 0, canvas.width, 45);
 
-            // ==========================================
-// ĐOẠN MÃ VẼ TÀU NGẦM VÀNG CHI TIẾT (NÂNG CẤP)
-// ==========================================
-ctx.save();
-ctx.lineWidth = 2.5;
-ctx.strokeStyle = "#d84315"; // Viền cam đậm giúp nổi bật tone vàng
+            // --- VẼ TÀU NGẦM VÀNG ---
+            ctx.save();
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = "#d84315"; 
 
-// 1. CHÂN VỊT & ĐUÔI TÀU (Vẽ phía sau trước để thân đè lên)
-ctx.fillStyle = "#ffb300";
-ctx.beginPath();
-ctx.moveTo(originX - 45, originY - 20);
-ctx.lineTo(originX - 60, originY - 32);
-ctx.lineTo(originX - 60, originY - 8);
-ctx.closePath();
-ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#ffb300";
+            ctx.beginPath();
+            ctx.moveTo(originX - 45, originY - 20);
+            ctx.lineTo(originX - 60, originY - 32);
+            ctx.lineTo(originX - 60, originY - 8);
+            ctx.closePath();
+            ctx.fill(); ctx.stroke();
 
-// Cánh chân vịt quay (Dùng elip nhỏ xoay nhẹ)
-ctx.fillStyle = "#757575";
-ctx.beginPath();
-ctx.ellipse(originX - 60, originY - 20, 4, 12, 0, 0, Math.PI * 2);
-ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#757575";
+            ctx.beginPath();
+            ctx.ellipse(originX - 60, originY - 20, 4, 12, 0, 0, Math.PI * 2);
+            ctx.fill(); ctx.stroke();
 
-// 2. THÂN TÀU NGẦM CHÍNH (Hình oval bầu bĩnh)
-ctx.fillStyle = "#ffeb3b"; // Màu vàng chủ đạo
-ctx.beginPath();
-ctx.ellipse(originX, originY - 20, 48, 24, 0, 0, Math.PI * 2);
-ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#ffeb3b"; 
+            ctx.beginPath();
+            ctx.ellipse(originX, originY - 20, 48, 24, 0, 0, Math.PI * 2);
+            ctx.fill(); ctx.stroke();
 
-// Đường gờ kim loại trang trí chạy dọc thân tàu
-ctx.strokeStyle = "#f57f17";
-ctx.beginPath();
-ctx.arc(originX, originY - 20, 48, Math.PI * 0.9, Math.PI * 0.1, true);
-ctx.stroke();
+            ctx.strokeStyle = "#f57f17";
+            ctx.beginPath();
+            ctx.arc(originX, originY - 20, 48, Math.PI * 0.9, Math.PI * 0.1, true);
+            ctx.stroke();
 
-// 3. THÁP QUAN SÁT & KÍNH TIỀM VỌNG (Phía trên)
-ctx.fillStyle = "#fdd835";
-ctx.strokeStyle = "#d84315";
-// Tháp nhô lên
-ctx.beginPath();
-ctx.moveTo(originX - 12, originY - 42);
-ctx.lineTo(originX + 12, originY - 42);
-ctx.lineTo(originX + 8, originY - 54);
-ctx.lineTo(originX - 8, originY - 54);
-ctx.closePath();
-ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#fdd835";
+            ctx.strokeStyle = "#d84315";
+            ctx.beginPath();
+            ctx.moveTo(originX - 12, originY - 42);
+            ctx.lineTo(originX + 12, originY - 42);
+            ctx.lineTo(originX + 8, originY - 54);
+            ctx.lineTo(originX - 8, originY - 54);
+            ctx.closePath();
+            ctx.fill(); ctx.stroke();
 
-// Kính tiềm vọng (Periscope) dạng ống cong chữ L
-ctx.strokeStyle = "#757575";
-ctx.lineWidth = 4;
-ctx.beginPath();
-ctx.moveTo(originX, originY - 54);
-ctx.lineTo(originX, originY - 68);
-ctx.lineTo(originX + 12, originY - 68);
-ctx.stroke();
-// Đèn kính tiềm vọng màu đỏ lấp lánh
-ctx.fillStyle = "#ff1744";
-ctx.beginPath();
-ctx.arc(originX + 14, originY - 68, 3, 0, Math.PI * 2);
-ctx.fill();
+            ctx.strokeStyle = "#757575";
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(originX, originY - 54);
+            ctx.lineTo(originX, originY - 68);
+            ctx.lineTo(originX + 12, originY - 68);
+            ctx.stroke();
 
-// 4. CÁNH NGẦM ĐIỀU HƯỚNG BÊN HÔNG (Tạo chiều sâu 3D)
-ctx.fillStyle = "#ffb300";
-ctx.lineWidth = 2.5;
-ctx.strokeStyle = "#d84315";
-ctx.beginPath();
-ctx.moveTo(originX - 15, originY - 12);
-ctx.lineTo(originX + 10, originY - 12);
-ctx.lineTo(originX + 5, originY - 6);
-ctx.lineTo(originX - 10, originY - 6);
-ctx.closePath();
-ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#ff1744";
+            ctx.beginPath();
+            ctx.arc(originX + 14, originY - 68, 3, 0, Math.PI * 2);
+            ctx.fill();
 
-// 5. CÁC Ô CỬA KÍNH TRÒN (Porholes) & HIỆU ỨNG PHẢN CHIẾU ĐẠI DƯƠNG
-let windowPositions = [originX - 22, originX, originX + 22];
-windowPositions.forEach(pos => {
-    // Viền cửa sổ kim loại
-    ctx.fillStyle = "#ffb300";
-    ctx.strokeStyle = "#d84315";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(pos, originY - 22, 8, 0, Math.PI * 2);
-    ctx.fill(); ctx.stroke();
+            ctx.fillStyle = "#ffb300";
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = "#d84315";
+            ctx.beginPath();
+            ctx.moveTo(originX - 15, originY - 12);
+            ctx.lineTo(originX + 10, originY - 12);
+            ctx.lineTo(originX + 5, originY - 6);
+            ctx.lineTo(originX - 10, originY - 6);
+            ctx.closePath();
+            ctx.fill(); ctx.stroke();
 
-    // Lớp kính màu xanh biển trong suốt
-    ctx.fillStyle = "#00e5ff";
-    ctx.beginPath();
-    ctx.arc(pos, originY - 22, 5, 0, Math.PI * 2);
-    ctx.fill();
+            let windowPositions = [originX - 22, originX, originX + 22];
+            windowPositions.forEach(pos => {
+                ctx.fillStyle = "#ffb300"; ctx.strokeStyle = "#d84315"; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.arc(pos, originY - 22, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
 
-    // Điểm bóng sáng màu trắng tạo hiệu ứng kính 3D
-    ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-    ctx.beginPath();
-    ctx.arc(pos - 2, originY - 24, 2, 0, Math.PI * 2);
-    ctx.fill();
-});
+                ctx.fillStyle = "#00e5ff";
+                ctx.beginPath(); ctx.arc(pos, originY - 22, 5, 0, Math.PI * 2); ctx.fill();
 
-ctx.restore();
-// ==========================================
+                ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+                ctx.beginPath(); ctx.arc(pos - 2, originY - 24, 2, 0, Math.PI * 2); ctx.fill();
+            });
+            ctx.restore();
 
-            // Cập nhật vị trí các loài cá/vật thể bơi sinh động
             for (let item of items) {
-                item.update();
-                item.draw();
+                item.update(); item.draw();
             }
 
-            // Xử lý hạt bọt rác hiệu ứng lấp lánh (Effect)
             for (let i = particles.length - 1; i >= 0; i--) {
-                particles[i].update();
-                particles[i].draw();
+                particles[i].update(); particles[i].draw();
                 if (particles[i].alpha <= 0) particles.splice(i, 1);
             }
 
-            // Xử lý Logic di chuyển Dây Cáp
             if (!isQuizActive) {
                 if (hookState === "SWING") {
                     clawAngle += clawSpeed;
@@ -921,13 +973,10 @@ ctx.restore();
                         hookState = "RETRACT";
                     }
 
-                    // Kiểm tra va chạm vật thể
                     for (let item of items) {
                         if (!item.alive) continue;
                         if (Math.hypot(checkX - item.x, checkY - item.y) < item.radius) {
-                            targetItem = item;
-                            hookState = "RETRACT";
-                            // Bắn hiệu ứng hạt rác tại điểm chạm ngay lập tức!
+                            targetItem = item; hookState = "RETRACT";
                             for(let k=0; k<15; k++) particles.push(new Particle(item.x, item.y));
                             break;
                         }
@@ -935,11 +984,9 @@ ctx.restore();
                 } else if (hookState === "RETRACT") {
                     clawLength -= targetItem ? 2.5 : 7; 
                     if (clawLength <= 30) {
-                        clawLength = 30;
-                        hookState = "SWING";
+                        clawLength = 30; hookState = "SWING";
                         if (targetItem) {
-                            let cachedItem = targetItem;
-                            targetItem = null;
+                            let cachedItem = targetItem; targetItem = null;
                             handleItemResult(cachedItem);
                         }
                     }
@@ -949,16 +996,13 @@ ctx.restore();
             let endX = originX + Math.sin(clawAngle) * clawLength;
             let endY = originY + Math.cos(clawAngle) * clawLength;
 
-            // Vẽ sợi dây cáp tời
             ctx.strokeStyle = "#ffe082"; ctx.lineWidth = 2.5;
             ctx.beginPath(); ctx.moveTo(originX, originY - 5); ctx.lineTo(endX, endY); ctx.stroke();
 
-            // Vẽ đầu móc tròn tời
             ctx.fillStyle = "#ffb300"; ctx.beginPath(); ctx.arc(endX, endY, 7, 0, Math.PI * 2); ctx.fill();
 
             if (targetItem) {
-                targetItem.x = endX;
-                targetItem.y = endY;
+                targetItem.x = endX; targetItem.y = endY;
             }
 
             loopId = requestAnimationFrame(gameLoop);
@@ -1000,7 +1044,7 @@ ctx.restore();
                             alert("🎉 CHÍNH XÁC! Tàu ngầm đã xử lý nghiền nén phân loại rác thành công. Nhận +100 điểm.");
                             
                             if (score >= 400) {
-                                alert("🏆 CHÚC MỪNG! Bạn đã xuất sắc cán mốc 400 điểm! Hệ thống đang cấp Giấy chứng nhận XANH!");
+                                alert("🏆 CHÚC MỪNG! Bạn đã xuất sắc cán mốc 400 điểm! Hệ thống đang cấp Huy hiệu Chiến Binh Đại Dương.!");
                                 endGame();
                                 return;
                             }
@@ -1027,7 +1071,6 @@ ctx.restore();
             document.getElementById('quiz-overlay').style.display = 'none';
 
             if (score >= 400) {
-                // Đồng bộ và lưu dữ liệu Chiến Thắng vĩnh viễn vào LocalStorage cho tài khoản này
                 if(currentUser) {
                     let db = JSON.parse(localStorage.getItem('green_users')) || [];
                     let idx = db.findIndex(u => u.mssv === currentUser.mssv);
@@ -1035,11 +1078,11 @@ ctx.restore();
                         db[idx].hasWin = true;
                         if(score > db[idx].highScore) db[idx].highScore = score;
                         localStorage.setItem('green_users', JSON.stringify(db));
-                        currentUser = db[idx]; // Cập nhật lại phiên hiện tại
+                        currentUser = db[idx]; 
                     }
                 }
 
-                document.getElementById('cert-user-name').innerText = currentUser ? currentUser.name.toUpperCase() : "CHIẾN BINH XANH";
+                document.getElementById('cert-user-name').innerText = currentUser ? currentUser.name.toUpperCase() : "CHIẾN BINH ĐẠI DƯƠNG";
                 document.getElementById('cert-user-mssv').innerText = currentUser ? currentUser.mssv : "OM-2026";
                 document.getElementById('cert-score').innerText = score;
                 switchPage('page-certificate');
